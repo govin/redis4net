@@ -8,7 +8,7 @@ Working on a nuget package. Meantime, please check out the source code.
 
 ## Configuration
 
-redis4net gives you the ability to log messages to redis lists. The library usage is similar to and inspired by the gelf4net library here - https://github.com/jjchiw/gelf4net. However, 
+redis4net gives you the ability to log messages to redis lists. The library usage is similar to and inspired by the [gelf4net library][1] library. However, 
 this library steers clear of the GELF message format since redis does not impose any such message formats. The base log message format used by this library consists of just 5 fields
 - type, message, sysloglevel, host and timestamp. Every other field can be supplied by the user and is customizable. 
 
@@ -84,7 +84,7 @@ This will be added to the log:
 ```  
 {
     ...
-    "_TraceID":"3449DDF8-C3B4-46DD-8B83-0BDF1ABC92E2",
+    "TraceID":"3449DDF8-C3B4-46DD-8B83-0BDF1ABC92E2",
     ...
 }
 ```  
@@ -151,7 +151,6 @@ _logger.Debug(new Dictionary<string,string>{
     { "Type", "Request" },
     { "Method", request.Method },
     { "Message", request.RawUrl }
-    }
 });
 
 ``` 
