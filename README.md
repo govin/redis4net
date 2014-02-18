@@ -1,5 +1,5 @@
-# log4redis-net   
-log4redis-net is a log4net adapter that formats logs and adds them to redis lists. This is useful when you have another system like logstash which indexes yours 
+# redis4net  
+redis4net is a log4net adapter that formats logs and adds them to redis lists. This is useful when you have another system like logstash which indexes yours 
 logs. The redis lists that you write to can feed into the logstash indexer.
 
 ## Installation
@@ -8,7 +8,7 @@ Working on a nuget package. Meantime, please check out the source code.
 
 ## Configuration
 
-gelf4net gives you the ability to log messages either through Udp or Amqp. The usage is similar to and inspired by the gelf4net library here - https://github.com/jjchiw/gelf4net, however, 
+redis4net gives you the ability to log messages to redis lists. The library usage is similar to and inspired by the gelf4net library here - https://github.com/jjchiw/gelf4net. However, 
 this library steers clear of the GELF message format since redis does not impose any such message formats. The base log message format used by this library consists of just 5 fields
 - type, message, sysloglevel, host and timestamp. Every other field can be supplied by the user and is customizable. 
 
