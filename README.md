@@ -1,5 +1,5 @@
 # redis4net  
-redis4net is a log4net adapter that formats logs and adds them to redis lists. This is useful when you have another system like logstash which indexes yours 
+redis4net is a log4net appender that formats logs and adds them to redis lists. This is useful when you have another system like logstash which indexes yours 
 logs. The redis lists that you write to can feed into the logstash indexer.
 
 ## Installation
