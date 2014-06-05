@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace redis4netUsage
 {
-	using System.Net.Mime;
-
 	using log4net;
 	using log4net.Config;
 
@@ -27,7 +22,7 @@ namespace redis4netUsage
 			dict.Add("mykey", "myvalue");
 			dict.Add("mykey2", "myvalue2");
 			dict.Add("Message", "my message hello world");
-			dict.Add("RID", 123);
+			dict.Add("IntegerValue", 123);
 			logger.Info(dict);
 			logger.Error(dict, new ArgumentException("Argument exception encountered"));
 		}
