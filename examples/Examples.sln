@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppUsage", "consoleAppUsage\ConsoleAppUsage.csproj", "{EFCA6395-376C-47CC-86C8-E9FE2751F850}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis4net", "..\src\redis4net\redis4net.csproj", "{21601568-D8AD-433F-998D-1500A27F3FBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{EFCA6395-376C-47CC-86C8-E9FE2751F850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFCA6395-376C-47CC-86C8-E9FE2751F850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFCA6395-376C-47CC-86C8-E9FE2751F850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21601568-D8AD-433F-998D-1500A27F3FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21601568-D8AD-433F-998D-1500A27F3FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21601568-D8AD-433F-998D-1500A27F3FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21601568-D8AD-433F-998D-1500A27F3FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

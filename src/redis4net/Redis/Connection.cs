@@ -1,48 +1,48 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BookSleeve;
 
 namespace redis4net.Redis
 {
+	using StackExchange.Redis;
+
 	public class Connection : IConnection, IDisposable
 	{
-		private RedisConnection _connection;
 		private string _listName;
+		private ConnectionMultiplexer redis;
 
 		public void Open(string hostname, int port, string listName)
 		{
 			try
 			{
 				_listName = listName;
-
-				_connection = new RedisConnection(hostname, port);
-				_connection.Open();
+				redis = ConnectionMultiplexer.Connect(string.Format("{0}:{1}", hostname, port));
 			}
 			catch
 			{
-				_connection = null;
+				redis = null;
 			}
 		}
 
 		public bool IsOpen()
 		{
-			return _connection != null && _connection.State == RedisConnectionBase.ConnectionState.Open;
+			return redis != null;
 		}
 
 		public Task<long> AddToList(string content)
 		{
-			return _connection.Lists.AddLast(0, _listName, content);
+			var database = redis.GetDatabase();
+			return database.ListRightPushAsync(_listName, new RedisValue[] { content });
 		}
 
 		public void Dispose()
 		{
-			if (_connection == null)
+			if (redis == null)
 			{
 				return;
 			}
 
-			_connection.Close(false);
-			_connection.Dispose();
+			redis.Close(false);
+			redis.Dispose();
 		}
 	}
 }

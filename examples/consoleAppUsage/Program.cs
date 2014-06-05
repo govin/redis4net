@@ -23,10 +23,11 @@ namespace redis4netUsage
 		static void Main(string[] args)
 		{
 			logger.Info("Hello world from redis appender");
-			var dict = new Dictionary<string, string>();
+			var dict = new Dictionary<string, object>();
 			dict.Add("mykey", "myvalue");
 			dict.Add("mykey2", "myvalue2");
 			dict.Add("Message", "my message hello world");
+			dict.Add("RID", 123);
 			logger.Info(dict);
 			logger.Error(dict, new ArgumentException("Argument exception encountered"));
 		}
