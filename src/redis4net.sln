@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis4net", "redis4net\redis4net.csproj", "{21601568-D8AD-433F-998D-1500A27F3FBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis4net-tests", "redis4netTests\redis4net-tests.csproj", "{713C9C99-6008-445A-A308-8EE32EA5A275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppUsage", "..\examples\consoleAppUsage\ConsoleAppUsage.csproj", "{EFCA6395-376C-47CC-86C8-E9FE2751F850}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +23,10 @@ Global
 		{713C9C99-6008-445A-A308-8EE32EA5A275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{713C9C99-6008-445A-A308-8EE32EA5A275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{713C9C99-6008-445A-A308-8EE32EA5A275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFCA6395-376C-47CC-86C8-E9FE2751F850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFCA6395-376C-47CC-86C8-E9FE2751F850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFCA6395-376C-47CC-86C8-E9FE2751F850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFCA6395-376C-47CC-86C8-E9FE2751F850}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
