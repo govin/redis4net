@@ -1,4 +1,6 @@
-﻿using log4net.Appender;
+﻿using System;
+using log4net.Appender;
+using log4net.Core;
 
 namespace redis4net.Appender
 {
@@ -25,9 +27,16 @@ namespace redis4net.Appender
 		}
 
 		protected override void Append(log4net.Core.LoggingEvent loggingEvent)
-		{	
-			var message = RenderLoggingEvent(loggingEvent);
-			ConnectionFactory.GetConnection().AddToList(message);
+		{
+			try
+			{
+				var message = RenderLoggingEvent(loggingEvent);
+				ConnectionFactory.GetConnection().AddToList(message);
+			}
+			catch(Exception exception)
+			{
+				ErrorHandler.Error("Unable to send logging event to remote redis host " + RemoteAddress + " on port " + RemotePort, exception, ErrorCode.WriteFailure);
+			}
 		}
 	}
 }
