@@ -27,14 +27,7 @@
 
 			lock (Lock)
 			{
-				try
-				{
-					_connection.Open();
-				}
-				catch
-				{
-					// Nothing to do if this fails
-				}
+				_connection.Open();
 			}
 		}
 	}
