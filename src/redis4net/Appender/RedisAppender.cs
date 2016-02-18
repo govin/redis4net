@@ -25,7 +25,7 @@ namespace redis4net.Appender
 		{
 		    var connection = new Connection();
 
-		    ConnectionFactory = string.IsNullOrEmpty(ConnectionString) ? new ConnectionFactory(connection,ConnectionString,1,ListName) : new ConnectionFactory(connection, RemoteAddress, RemotePort, 1, ListName);
+		    ConnectionFactory = !string.IsNullOrEmpty(ConnectionString) ? new ConnectionFactory(connection,ConnectionString,1,ListName) : new ConnectionFactory(connection, RemoteAddress, RemotePort, 1, ListName);
 		}
 
 	    protected override void Append(log4net.Core.LoggingEvent loggingEvent)
