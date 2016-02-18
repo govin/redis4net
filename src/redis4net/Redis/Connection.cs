@@ -10,12 +10,12 @@ namespace redis4net.Redis
 		private string _listName;
 		private ConnectionMultiplexer redis;
 
-	    public void OpenCluster(string clusterConnectionString, string listName)
+	    public void OpenWithConnectionString(string connectionString, string listName)
 	    {
             try
             {
                 _listName = listName;
-                redis = ConnectionMultiplexer.Connect(clusterConnectionString);
+                redis = ConnectionMultiplexer.Connect(connectionString);
             }
             catch
             {
