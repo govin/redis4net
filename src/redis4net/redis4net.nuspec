@@ -16,4 +16,7 @@
       <dependency id="StackExchange.Redis" version="1.0.297" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin\Release\redis4net.dll" target="lib\net452\redis4net.dll" />
+  </files>
 </package>
