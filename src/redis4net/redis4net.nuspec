@@ -6,7 +6,7 @@
     <title>redis4net (ezy edition)</title>
     <authors>ezy</authors>
     <owners>redis4net</owners>
-    <projectUrl>https://github.com/govin/redis4net</projectUrl>
+    <projectUrl>https://github.com/tazer/redis4net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>redis4net - log4net redis appender</description>
     <copyright>Copyright ©  2014</copyright>
