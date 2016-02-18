@@ -17,7 +17,7 @@ namespace redis4net.Redis
                 _listName = listName;
                 redis = ConnectionMultiplexer.Connect(connectionString);
             }
-            catch
+            catch(Exception ex)
             {
                 redis = null;
             }

@@ -18,7 +18,8 @@ namespace redis4net.Redis
 
 	    public ConnectionFactory(IConnection connection, string connectionString, int failedConnectionRetryTimeoutInSeconds, string listName)
 	    {
-	        _connectionString = connectionString;
+            _connection = connection;
+            _connectionString = connectionString;
             _failedConnectionRetryTimeoutInSeconds = failedConnectionRetryTimeoutInSeconds;
             _listName = listName;
 	        _usingConnectionString = true;
