@@ -13,15 +13,15 @@ namespace redis4net.Redis
 		private readonly int _failedConnectionRetryTimeoutInSeconds;
 		private readonly string _listName;
 		private readonly IConnection _connection;
-	    private string _clusterConnectionString;
-	    private bool _usingCluster = false;
+	    private string _connectionString;
+	    private readonly bool _usingConnectionString = false;
 
-	    public ConnectionFactory(IConnection connection, string clusterConnectionString, int failedConnectionRetryTimeoutInSeconds, string listName)
+	    public ConnectionFactory(IConnection connection, string connectionString, int failedConnectionRetryTimeoutInSeconds, string listName)
 	    {
-	        _clusterConnectionString = clusterConnectionString;
+	        _connectionString = connectionString;
             _failedConnectionRetryTimeoutInSeconds = failedConnectionRetryTimeoutInSeconds;
             _listName = listName;
-	        _usingCluster = true;
+	        _usingConnectionString = true;
 	    }
 
 		public ConnectionFactory(IConnection connection, string hostName, int portNumber, int failedConnectionRetryTimeoutInSeconds, string listName)
@@ -70,9 +70,9 @@ namespace redis4net.Redis
 		{
 			if (!_connection.IsOpen())
 			{
-			    if (_usingCluster)
+			    if (_usingConnectionString)
 			    {
-			        _connection.OpenCluster(_clusterConnectionString,_listName);
+			        _connection.OpenWithConnectionString(_connectionString,_listName);
 			    }
 			    else
 			    {

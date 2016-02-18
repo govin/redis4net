@@ -11,7 +11,7 @@ namespace redis4net.Appender
 		protected ConnectionFactory ConnectionFactory { get; set; }
 		public string RemoteAddress { get; set; }
 		public int RemotePort { get; set; }
-        public string ClusterConnectionString { get; set; }
+        public string ConnectionString { get; set; }
 		public string ListName { get; set; }
 
 		public override void ActivateOptions()
@@ -25,7 +25,7 @@ namespace redis4net.Appender
 		{
 		    var connection = new Connection();
 
-		    ConnectionFactory = string.IsNullOrEmpty(ClusterConnectionString) ? new ConnectionFactory(connection,ClusterConnectionString,1,ListName) : new ConnectionFactory(connection, RemoteAddress, RemotePort, 1, ListName);
+		    ConnectionFactory = string.IsNullOrEmpty(ConnectionString) ? new ConnectionFactory(connection,ConnectionString,1,ListName) : new ConnectionFactory(connection, RemoteAddress, RemotePort, 1, ListName);
 		}
 
 	    protected override void Append(log4net.Core.LoggingEvent loggingEvent)
