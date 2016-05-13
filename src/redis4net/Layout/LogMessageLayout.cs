@@ -140,7 +140,7 @@ namespace redis4net.Layout
 
 			message.Add("LoggerName", loggingEvent.LoggerName);
 
-			if (this.IncludeLocationInformation)
+			if (this.IncludeLocationInformation && loggingEvent.LocationInformation != null)
 			{
 				message.File = loggingEvent.LocationInformation.FileName;
 				message.Line = loggingEvent.LocationInformation.LineNumber;
