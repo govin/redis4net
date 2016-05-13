@@ -53,12 +53,6 @@ namespace redis4net.Redis
 				try
 				{
 					OpenConnection();
-
-					if (!_connection.IsOpen())
-					{
-						Thread.Sleep(TimeSpan.FromSeconds(_failedConnectionRetryTimeoutInSeconds));
-						OpenConnection();
-					}
 				}
 				catch
 				{
