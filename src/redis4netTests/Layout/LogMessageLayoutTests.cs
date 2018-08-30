@@ -187,7 +187,7 @@ namespace redis4netTests.Layout
 
 			Assert.AreEqual("[DEBUG] - [Class]", result["message"]);
 		}
-		
+
 		[Test]
 		public void ToStringOnObjectIfNoMessageIsProvided()
 		{
@@ -216,8 +216,8 @@ namespace redis4netTests.Layout
 			var result = GetMessage(layout, loggingEvent);
 
 			Assert.AreEqual(message, result.Message);
-			Assert.IsNotNullOrEmpty(result.Line);
-			Assert.IsNotNullOrEmpty(result.File);
+			Assert.That(result.Line, Is.Not.Empty);
+			Assert.That(result.File, Is.Not.Empty);
 		}
 
 		private LogMessage GetMessage(LogMessageLayout layout, LoggingEvent message)
@@ -231,7 +231,7 @@ namespace redis4netTests.Layout
 
 		private static LoggingEvent GetLogginEvent(object message)
 		{
-			
+
 			return new LoggingEvent((Type)null, (ILoggerRepository)null, "Test.Logger.Class", Level.Debug, message, null);
 		}
 	}

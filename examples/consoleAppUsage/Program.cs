@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using log4net.Repository.Hierarchy;
 
 namespace redis4netUsage
 {
@@ -8,11 +10,15 @@ namespace redis4netUsage
 
 	class Program
 	{
-		private static readonly ILog logger = LogManager.GetLogger(typeof(Program).Name);
+		private static readonly ILog logger = LogManager.GetLogger(typeof(Program));
 
 		static Program()
 		{
-			XmlConfigurator.Configure();
+#if NETCOREAPP
+			XmlConfigurator.Configure(new Hierarchy(), File.OpenRead("log4net.config"));
+#else
+			XmlConfigurator.Configure(File.OpenRead("log4net.config"));
+#endif
 		}
 
 		static void Main(string[] args)
