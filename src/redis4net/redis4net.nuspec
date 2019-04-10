@@ -6,17 +6,17 @@
     <title>redis4net (ezy edition)</title>
     <authors>ezy</authors>
     <owners>redis4net</owners>
-    <projectUrl>https://github.com/tazer/redis4net</projectUrl>
+    <projectUrl>https://github.com/ezywebwerkstaden/redis4net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>redis4net - log4net redis appender</description>
-    <copyright>Copyright ©  2014</copyright>
+    <copyright>Copyright ©  2019</copyright>
     <dependencies>
-      <dependency id="log4net" version="2.0.5" />
-      <dependency id="Newtonsoft.Json" version="7.0.1" />
-      <dependency id="StackExchange.Redis" version="1.0.488" />
+      <dependency id="log4net" version="2.0.8" />
+      <dependency id="Newtonsoft.Json" version="12.0.1" />
+      <dependency id="StackExchange.Redis" version="2.0.600" />
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\redis4net.dll" target="lib\net452\redis4net.dll" />
+    <file src="bin\Release\redis4net.dll" target="lib\net472\redis4net.dll" />
   </files>
 </package>
