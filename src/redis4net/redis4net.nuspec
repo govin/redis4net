@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>redis4net</id>
+    <version>1.0.0</version>
+    <title>Redis4Net</title>
+    <authors>JustGiving</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/JustGiving/redis4net</projectUrl>
+    <description>Redis4net is a log4net appender that formats logs and adds them to redis lists</description>
+    <releaseNotes>Package Upgrade</releaseNotes>
+    <copyright>Copyright 2022</copyright>
+    <tags>Redis4Net</tags>
+	  <dependencies>
+		  <group targetFramework=".NETFramework4.6.1">
+			  <dependency id="log4net" version="2.0.12" exclude="Build,Analyzers" />
+			  <dependency id ="Newtonsoft.Json" version="6.0.8" exclude ="Build,Analyzers" />
+			  <dependency id ="StackExchange.Redis" version="2.2.8" exclude ="Build,Analyzers" />
+		  </group>
+	  </dependencies>
+  </metadata>
+</package>
